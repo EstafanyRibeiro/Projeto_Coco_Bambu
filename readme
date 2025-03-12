@@ -1,6 +1,6 @@
 ### **📌 README - Testes Automatizados do Coco Bambu**  
 
-## 📖 **Descrição**  
+## 📚 **Descrição**  
 
 Este projeto visa automatizar os testes do site de delivery do **Coco Bambu** utilizando o **Robot Framework**. Os testes abrangem:  
 
@@ -12,9 +12,9 @@ Este projeto visa automatizar os testes do site de delivery do **Coco Bambu** ut
 
 ---
 
-## 📁 **Estrutura do Projeto**  
+## 💁 **Estrutura do Projeto**  
 
-```
+```sh
 Projeto_CocoBambu/
 │
 ├── keywords/             # Contém as palavras-chave reutilizáveis
@@ -31,7 +31,7 @@ Projeto_CocoBambu/
 └── README.md             # Documentação do projeto
 ```
 
-### 🗂 **Detalhes dos Arquivos**  
+### 📂 **Detalhes dos Arquivos**  
 
 - **`keywords.robot`** → Define funções reutilizáveis para os testes  
 - **`mapa.robot`** → Contém variáveis e mapeamento dos elementos da página  
@@ -53,7 +53,7 @@ Projeto_CocoBambu/
 
 1️⃣ **Clone o repositório:**  
 ```sh
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/EstafanyRibeiro/Projeto_Coco_Bambu.git
 cd Projeto_CocoBambu
 ```
 
@@ -98,4 +98,6 @@ Compra de Voucher
 🔹 Faça um **commit** (`git commit -m "Minha nova feature"`)  
 🔹 Faça um **push** (`git push origin minha-feature`)  
 🔹 Abra um **Pull Request** 🚀  
+
+
 
