@@ -1,121 +1,101 @@
-Claro! Aqui está um README.md revisado e detalhado para o seu projeto de testes automatizados do site Coco Bambu:
+### **📌 README - Testes Automatizados do Coco Bambu**  
 
-```markdown
-# Projeto de Testes Automatizados - Coco Bambu
+## 📖 **Descrição**  
 
-## Descrição
+Este projeto visa automatizar os testes do site de delivery do **Coco Bambu** utilizando o **Robot Framework**. Os testes abrangem:  
 
-Este projeto tem como objetivo automatizar os testes do site de delivery do Coco Bambu utilizando o Robot Framework. Os testes cobrem o fluxo de navegação no site, seleção de vouchers, cadastro de usuário, autenticação, seleção de forma de pagamento e preenchimento de dados complementares.
+✅ Fluxo de navegação no site  
+✅ Seleção de vouchers  
+✅ Cadastro de usuário e autenticação  
+✅ Escolha de forma de pagamento  
+✅ Preenchimento de dados complementares  
 
-## Estrutura do Projeto
+---
 
-A estrutura do projeto é organizada da seguinte forma:
+## 📁 **Estrutura do Projeto**  
 
 ```
-Projeto Coco Bambu/
+Projeto_CocoBambu/
 │
-├── keywords/
+├── keywords/             # Contém as palavras-chave reutilizáveis
 │   └── keywords.robot
 │
-├── variables/
+├── variables/            # Contém variáveis globais e mapeamento de elementos
 │   └── mapa.robot
 │
-├── tests/
+├── tests/                # Contém os casos de teste
 │   └── TesteVoucher.robot
 │
-└── README.md
+├── logs/                 # Armazena logs e reports gerados após a execução
+│
+└── README.md             # Documentação do projeto
 ```
 
-### Arquivos e Pastas
+### 🗂 **Detalhes dos Arquivos**  
 
-- **keywords/**: Contém os arquivos de palavras-chave (keywords) utilizadas nos testes.
-  - `keywords.robot`: Define as palavras-chave utilizadas nos casos de teste.
+- **`keywords.robot`** → Define funções reutilizáveis para os testes  
+- **`mapa.robot`** → Contém variáveis e mapeamento dos elementos da página  
+- **`TesteVoucher.robot`** → Casos de teste para o fluxo de vouchers  
 
-- **variables/**: Contém os arquivos de variáveis utilizadas nos testes.
-  - `mapa.robot`: Define as variáveis de mapeamento dos elementos da página e dados de teste.
+---
 
-- **tests/**: Contém os arquivos de casos de teste.
-  - `TesteVoucher.robot`: Define os casos de teste para o fluxo de vouchers no site do Coco Bambu.
+## ⚙ **Configuração do Ambiente**  
 
-## Configuração do Ambiente
+### **🔹 Pré-requisitos**  
 
-### Pré-requisitos
+- Python **3.x**  
+- Robot Framework  
+- SeleniumLibrary  
+- FakerLibrary  
+- WebDriver do navegador (ex: **ChromeDriver** para Google Chrome)  
 
-- Python 3.x
-- Robot Framework
-- SeleniumLibrary
-- FakerLibrary
-- WebDriver do navegador utilizado (ex: ChromeDriver para Google Chrome)
+### **🔹 Instalação**  
 
-### Instalação
-
-1. Clone o repositório para sua máquina local:
-
+1️⃣ **Clone o repositório:**  
 ```sh
 git clone <URL_DO_REPOSITORIO>
-cd Projeto Coco Bambu
+cd Projeto_CocoBambu
 ```
 
-2. Instale as dependências necessárias:
-
+2️⃣ **Instale as dependências:**  
 ```sh
 pip install -r requirements.txt
 ```
 
-3. Baixe e configure o WebDriver do navegador que será utilizado (ex: ChromeDriver para Google Chrome).
+3️⃣ **Baixe o ChromeDriver:**  
+Baixe a versão compatível do [ChromeDriver aqui](https://sites.google.com/chromium.org/driver/downloads).  
+Coloque-o em um diretório acessível e configure no `PATH`.  
 
-### Configuração do ChromeDriver
+---
 
-Certifique-se de que o ChromeDriver está instalado e configurado corretamente. Você pode baixar o ChromeDriver do [site oficial do ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) e colocá-lo em um diretório acessível. Atualize o caminho do ChromeDriver no seu código, se necessário.
+## 🚀 **Execução dos Testes**  
 
-## Execução dos Testes
-
-Para executar os testes, utilize o seguinte comando:
-
+Para rodar os testes, utilize:  
 ```sh
 robot tests/TesteVoucher.robot
 ```
-
-## Detalhes dos Arquivos
-
-### keywords.robot
-
-Define as palavras-chave utilizadas nos casos de teste. Exemplo de uma palavra-chave para realizar o cadastro:
-
-```robot
-*** Keywords ***
-Dado que o site do Coco Bambu seja acessado
-    Open Browser                    ${URL}    ${BROWSER}
-    Maximize Browser Window
-    Set Browser Implicit Wait       10
-
+📌 **Dica:** Para gerar logs detalhados e report HTML:  
+```sh
+robot --outputdir logs tests/TesteVoucher.robot
 ```
 
-### mapa.robot
-
-Define as variáveis de mapeamento dos elementos da página e dados de teste. Exemplo de variáveis:
-
-```robot
-*** Variables ***
-${BROWSER}                      chrome
-${URL}                          https://app-hom.cocobambu.com/delivery
-
-
-```
-
-### TesteVoucher.robot
-
-Define os casos de teste para o fluxo de vouchers no site do Coco Bambu. Exemplo de um caso de teste:
-
+### 🎯 **Exemplo de Caso de Teste (TesteVoucher.robot)**  
 ```robot
 *** Test Cases ***
-Compra de voucher
+Compra de Voucher
     Dado que o site do Coco Bambu seja acessado
     Quando o usuário selecionar a aba de Vouchers
     E selecionar o Estado desejado
-
+    Então o usuário deve visualizar as opções de vouchers disponíveis
 ```
 
-## Contribuição
+---
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
+## 🤝 **Contribuição**  
+
+🔹 **Fork** o repositório  
+🔹 Crie uma **branch** (`git checkout -b minha-feature`)  
+🔹 Faça um **commit** (`git commit -m "Minha nova feature"`)  
+🔹 Faça um **push** (`git push origin minha-feature`)  
+🔹 Abra um **Pull Request** 🚀  
+
