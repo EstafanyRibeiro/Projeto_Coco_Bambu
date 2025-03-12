@@ -53,7 +53,7 @@ Projeto_CocoBambu/
 
 1️⃣ **Clone o repositório:**  
 ```sh
-git clone <URL_DO_REPOSITORIO>
+git clone  https://github.com/EstafanyRibeiro/Projeto_Coco_Bambu.git
 cd Projeto_CocoBambu
 ```
 
