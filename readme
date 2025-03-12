@@ -1,0 +1,121 @@
+Claro! Aqui está um README.md revisado e detalhado para o seu projeto de testes automatizados do site Coco Bambu:
+
+```markdown
+# Projeto de Testes Automatizados - Coco Bambu
+
+## Descrição
+
+Este projeto tem como objetivo automatizar os testes do site de delivery do Coco Bambu utilizando o Robot Framework. Os testes cobrem o fluxo de navegação no site, seleção de vouchers, cadastro de usuário, autenticação, seleção de forma de pagamento e preenchimento de dados complementares.
+
+## Estrutura do Projeto
+
+A estrutura do projeto é organizada da seguinte forma:
+
+```
+Projeto Coco Bambu/
+│
+├── keywords/
+│   └── keywords.robot
+│
+├── variables/
+│   └── mapa.robot
+│
+├── tests/
+│   └── TesteVoucher.robot
+│
+└── README.md
+```
+
+### Arquivos e Pastas
+
+- **keywords/**: Contém os arquivos de palavras-chave (keywords) utilizadas nos testes.
+  - `keywords.robot`: Define as palavras-chave utilizadas nos casos de teste.
+
+- **variables/**: Contém os arquivos de variáveis utilizadas nos testes.
+  - `mapa.robot`: Define as variáveis de mapeamento dos elementos da página e dados de teste.
+
+- **tests/**: Contém os arquivos de casos de teste.
+  - `TesteVoucher.robot`: Define os casos de teste para o fluxo de vouchers no site do Coco Bambu.
+
+## Configuração do Ambiente
+
+### Pré-requisitos
+
+- Python 3.x
+- Robot Framework
+- SeleniumLibrary
+- FakerLibrary
+- WebDriver do navegador utilizado (ex: ChromeDriver para Google Chrome)
+
+### Instalação
+
+1. Clone o repositório para sua máquina local:
+
+```sh
+git clone <URL_DO_REPOSITORIO>
+cd Projeto Coco Bambu
+```
+
+2. Instale as dependências necessárias:
+
+```sh
+pip install -r requirements.txt
+```
+
+3. Baixe e configure o WebDriver do navegador que será utilizado (ex: ChromeDriver para Google Chrome).
+
+### Configuração do ChromeDriver
+
+Certifique-se de que o ChromeDriver está instalado e configurado corretamente. Você pode baixar o ChromeDriver do [site oficial do ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) e colocá-lo em um diretório acessível. Atualize o caminho do ChromeDriver no seu código, se necessário.
+
+## Execução dos Testes
+
+Para executar os testes, utilize o seguinte comando:
+
+```sh
+robot tests/TesteVoucher.robot
+```
+
+## Detalhes dos Arquivos
+
+### keywords.robot
+
+Define as palavras-chave utilizadas nos casos de teste. Exemplo de uma palavra-chave para realizar o cadastro:
+
+```robot
+*** Keywords ***
+Dado que o site do Coco Bambu seja acessado
+    Open Browser                    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Browser Implicit Wait       10
+
+```
+
+### mapa.robot
+
+Define as variáveis de mapeamento dos elementos da página e dados de teste. Exemplo de variáveis:
+
+```robot
+*** Variables ***
+${BROWSER}                      chrome
+${URL}                          https://app-hom.cocobambu.com/delivery
+
+
+```
+
+### TesteVoucher.robot
+
+Define os casos de teste para o fluxo de vouchers no site do Coco Bambu. Exemplo de um caso de teste:
+
+```robot
+*** Test Cases ***
+Compra de voucher
+    Dado que o site do Coco Bambu seja acessado
+    Quando o usuário selecionar a aba de Vouchers
+    E selecionar o Estado desejado
+
+```
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.

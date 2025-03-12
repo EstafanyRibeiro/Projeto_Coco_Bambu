@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2025-03-12T09:21:51.492255" rpa="false" schemaversion="5">
+<suite id="s1" name="deleteCarts" source="C:\Users\estaf\OneDrive\Documentos\Ciência de dados\Projeto Coco Bambu\tests\deleteCarts.robot">
+<test id="s1-t1" name="Remover Carrinho Com Sucesso" line="9">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-03-12T09:21:52.798148" level="INFO">Creating Session using : alias=minha_sessao, url=https://dummyjson.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>minha_sessao</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-03-12T09:21:52.797583" elapsed="0.000565"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-03-12T09:21:53.331128" level="INFO">DELETE Request : url=https://dummyjson.com/carts/1 
+ path_url=/carts/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-03-12T09:21:53.331639" level="INFO">DELETE Response : url=https://dummyjson.com/carts/1 
+ status=200, reason=OK 
+ headers={'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1741782111&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=oofhuqQVAw4wFb2F%2FGp6O%2FkcnOU%2BD9sj2BDfJNqYBoo%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1741782111&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=oofhuqQVAw4wFb2F%2FGp6O%2FkcnOU%2BD9sj2BDfJNqYBoo%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=15552000; includeSubDomains', 'X-Download-Options': 'noopen', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'X-Powered-By': 'Cats on Keyboards', 'Server': 'BobTheBuilder', 'X-Ratelimit-Limit': '100', 'X-Ratelimit-Remaining': '99', 'Date': 'Wed, 12 Mar 2025 12:21:51 GMT', 'X-Ratelimit-Reset': '1741782113', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"499-ld9SV7J2vsYXcwvUIpArRzGg/aQ"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Via': '1.1 vegur'} 
+ body={"id":1,"products":[{"id":168,"title":"Charger SXT RWD","price":32999.99,"quantity":3,"total":98999.97,"discountPercentage":13.39,"discountedTotal":85743.87,"thumbnail":"https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png"},{"id":78,"title":"Apple MacBook Pro 14 Inch Space Grey","price":1999.99,"quantity":2,"total":3999.98,"discountPercentage":18.52,"discountedTotal":3259.18,"thumbnail":"https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"},{"id":183,"title":"Green Oval Earring","price":24.99,"quantity":5,"total":124.94999999999999,"discountPercentage":6.28,"discountedTotal":117.1,"thumbnail":"https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png"},{"id":100,"title":"Apple Airpods","price":129.99,"quantity":5,"total":649.95,"discountPercentage":12.84,"discountedTotal":566.5,"thumbnail":"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/thumbnail.png"}],"total":103774.85,"discountedTotal":89686.65,"userId":33,"totalProducts":4,"totalQuantity":15,"isDeleted":true,"deletedOn":"2025-03-12T12:21:51.614Z"} 
+ </msg>
+<msg time="2025-03-12T09:21:53.332160" level="INFO">C:\Users\estaf\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-03-12T09:21:53.335624" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<var>${RESPONSE}</var>
+<arg>minha_sessao</arg>
+<arg>/carts/1</arg>
+<arg>headers=&amp;{HEADERS}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-03-12T09:21:52.800565" elapsed="0.535784"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-03-12T09:21:53.340024" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${RESPONSE.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-03-12T09:21:53.337929" elapsed="0.002295"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-12T09:21:53.344608" level="INFO">{'id': 1, 'products': [{'id': 168, 'title': 'Charger SXT RWD', 'price': 32999.99, 'quantity': 3, 'total': 98999.97, 'discountPercentage': 13.39, 'discountedTotal': 85743.87, 'thumbnail': 'https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png'}, {'id': 78, 'title': 'Apple MacBook Pro 14 Inch Space Grey', 'price': 1999.99, 'quantity': 2, 'total': 3999.98, 'discountPercentage': 18.52, 'discountedTotal': 3259.18, 'thumbnail': 'https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png'}, {'id': 183, 'title': 'Green Oval Earring', 'price': 24.99, 'quantity': 5, 'total': 124.94999999999999, 'discountPercentage': 6.28, 'discountedTotal': 117.1, 'thumbnail': 'https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png'}, {'id': 100, 'title': 'Apple Airpods', 'price': 129.99, 'quantity': 5, 'total': 649.95, 'discountPercentage': 12.84, 'discountedTotal': 566.5, 'thumbnail': 'https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpods/thumbnail.png'}], 'total': 103774.85, 'discountedTotal': 89686.65, 'userId': 33, 'totalProducts': 4, 'totalQuantity': 15, 'isDeleted': True, 'deletedOn': '2025-03-12T12:21:51.614Z'}</msg>
+<arg>${RESPONSE.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-12T09:21:53.340892" elapsed="0.003716"/>
+</kw>
+<doc>Teste para remover um carrinho existente com sucesso</doc>
+<status status="PASS" start="2025-03-12T09:21:52.795736" elapsed="0.550218"/>
+</test>
+<test id="s1-t2" name="Remover Carrinho Inexistente" line="17">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-03-12T09:21:53.350458" level="INFO">Creating Session using : alias=minha_sessao, url=https://dummyjson.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>minha_sessao</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-03-12T09:21:53.349570" elapsed="0.000888"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-03-12T09:21:53.851965" level="INFO">DELETE Request : url=https://dummyjson.com/carts/99999 
+ path_url=/carts/99999 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-03-12T09:21:53.852491" level="INFO">DELETE Response : url=https://dummyjson.com/carts/99999 
+ status=404, reason=Not Found 
+ headers={'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1741782112&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=R2TGVSitZH4Wof1Ze3wIAdvngQO1VeKrte0eGt12c5g%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1741782112&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=R2TGVSitZH4Wof1Ze3wIAdvngQO1VeKrte0eGt12c5g%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=15552000; includeSubDomains', 'X-Download-Options': 'noopen', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'X-Powered-By': 'Cats on Keyboards', 'Server': 'BobTheBuilder', 'X-Ratelimit-Limit': '100', 'X-Ratelimit-Remaining': '98', 'Date': 'Wed, 12 Mar 2025 12:21:52 GMT', 'X-Ratelimit-Reset': '1741782113', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '44', 'Etag': 'W/"2c-2aG2MmFZ+Q2tmmGbxWWbpFMS/Ec"', 'Vary': 'Accept-Encoding', 'Via': '1.1 vegur'} 
+ body={"message":"Cart with id '99999' not found"} 
+ </msg>
+<msg time="2025-03-12T09:21:53.853384" level="INFO">C:\Users\estaf\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-03-12T09:21:53.856738" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://dummyjson.com/carts/99999</msg>
+<var>${RESPONSE}</var>
+<arg>minha_sessao</arg>
+<arg>/carts/99999</arg>
+<arg>headers=&amp;{HEADERS}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-03-12T09:21:53.352792" elapsed="0.516211">HTTPError: 404 Client Error: Not Found for url: https://dummyjson.com/carts/99999</status>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${RESPONSE.status_code}</arg>
+<arg>404</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="NOT RUN" start="2025-03-12T09:21:53.870355" elapsed="0.000203"/>
+</kw>
+<doc>Teste para verificar erro ao remover um carrinho inexistente</doc>
+<status status="FAIL" start="2025-03-12T09:21:53.348292" elapsed="0.522953">HTTPError: 404 Client Error: Not Found for url: https://dummyjson.com/carts/99999</status>
+</test>
+<test id="s1-t3" name="Remover Carrinho Sem ID" line="24">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-03-12T09:21:53.880528" level="INFO">Creating Session using : alias=minha_sessao, url=https://dummyjson.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>minha_sessao</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-03-12T09:21:53.880528" elapsed="0.000000"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-03-12T09:21:54.519017" level="INFO">DELETE Request : url=https://dummyjson.com/carts/ (redirected) 
+ path_url=/carts/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-03-12T09:21:54.519662" level="INFO">DELETE Response : url=https://dummyjson.com/carts 
+ status=404, reason=Not Found 
+ headers={'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1741782112&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=R2TGVSitZH4Wof1Ze3wIAdvngQO1VeKrte0eGt12c5g%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1741782112&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=R2TGVSitZH4Wof1Ze3wIAdvngQO1VeKrte0eGt12c5g%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=15552000; includeSubDomains', 'X-Download-Options': 'noopen', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'X-Powered-By': 'Cats on Keyboards', 'Server': 'BobTheBuilder', 'X-Ratelimit-Limit': '100', 'X-Ratelimit-Remaining': '98', 'Date': 'Wed, 12 Mar 2025 12:21:52 GMT', 'X-Ratelimit-Reset': '1741782123', 'Content-Security-Policy': "default-src 'none'", 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '147', 'Vary': 'Accept-Encoding', 'Via': '1.1 vegur'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;pre&gt;Cannot DELETE /carts&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg time="2025-03-12T09:21:54.519662" level="INFO">C:\Users\estaf\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+C:\Users\estaf\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-03-12T09:21:54.523457" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://dummyjson.com/carts</msg>
+<var>${RESPONSE}</var>
+<arg>minha_sessao</arg>
+<arg>/carts/</arg>
+<arg>headers=&amp;{HEADERS}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-03-12T09:21:53.882063" elapsed="0.643232">HTTPError: 404 Client Error: Not Found for url: https://dummyjson.com/carts</status>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${RESPONSE.status_code}</arg>
+<arg>400</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="NOT RUN" start="2025-03-12T09:21:54.525802" elapsed="0.000093"/>
+</kw>
+<doc>Teste para verificar erro ao tentar remover um carrinho sem fornecer ID</doc>
+<status status="FAIL" start="2025-03-12T09:21:53.878417" elapsed="0.647987">HTTPError: 404 Client Error: Not Found for url: https://dummyjson.com/carts</status>
+</test>
+<status status="FAIL" start="2025-03-12T09:21:51.498678" elapsed="3.030611"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="2" skip="0" id="s1" name="deleteCarts">deleteCarts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
