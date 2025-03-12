@@ -1,6 +1,6 @@
-### **📌 README - Testes Automatizados do Coco Bambu**  
+**📌 README - Testes Automatizados do Coco Bambu**  
 
-## 📚 **Descrição**  
+📖 **Descrição**  
 
 Este projeto visa automatizar os testes do site de delivery do **Coco Bambu** utilizando o **Robot Framework**. Os testes abrangem:  
 
@@ -12,9 +12,9 @@ Este projeto visa automatizar os testes do site de delivery do **Coco Bambu** ut
 
 ---
 
-## 💁 **Estrutura do Projeto**  
+📁 **Estrutura do Projeto**  
 
-```sh
+```
 Projeto_CocoBambu/
 │
 ├── keywords/             # Contém as palavras-chave reutilizáveis
@@ -31,7 +31,7 @@ Projeto_CocoBambu/
 └── README.md             # Documentação do projeto
 ```
 
-### 📂 **Detalhes dos Arquivos**  
+🗂 **Detalhes dos Arquivos**  
 
 - **`keywords.robot`** → Define funções reutilizáveis para os testes  
 - **`mapa.robot`** → Contém variáveis e mapeamento dos elementos da página  
@@ -39,9 +39,9 @@ Projeto_CocoBambu/
 
 ---
 
-## ⚙ **Configuração do Ambiente**  
+⚙ **Configuração do Ambiente**  
 
-### **🔹 Pré-requisitos**  
+**🔹 Pré-requisitos**  
 
 - Python **3.x**  
 - Robot Framework  
@@ -49,11 +49,11 @@ Projeto_CocoBambu/
 - FakerLibrary  
 - WebDriver do navegador (ex: **ChromeDriver** para Google Chrome)  
 
-### **🔹 Instalação**  
+**🔹 Instalação**  
 
 1️⃣ **Clone o repositório:**  
 ```sh
-git clone https://github.com/EstafanyRibeiro/Projeto_Coco_Bambu.git
+git clone <URL_DO_REPOSITORIO>
 cd Projeto_CocoBambu
 ```
 
@@ -68,7 +68,7 @@ Coloque-o em um diretório acessível e configure no `PATH`.
 
 ---
 
-## 🚀 **Execução dos Testes**  
+🚀 **Execução dos Testes**  
 
 Para rodar os testes, utilize:  
 ```sh
@@ -79,7 +79,7 @@ robot tests/TesteVoucher.robot
 robot --outputdir logs tests/TesteVoucher.robot
 ```
 
-### 🎯 **Exemplo de Caso de Teste (TesteVoucher.robot)**  
+🎯 **Exemplo de Caso de Teste (TesteVoucher.robot)**  
 ```robot
 *** Test Cases ***
 Compra de Voucher
@@ -91,13 +91,10 @@ Compra de Voucher
 
 ---
 
-## 🤝 **Contribuição**  
+🤝 **Contribuição**  
 
 🔹 **Fork** o repositório  
 🔹 Crie uma **branch** (`git checkout -b minha-feature`)  
 🔹 Faça um **commit** (`git commit -m "Minha nova feature"`)  
 🔹 Faça um **push** (`git push origin minha-feature`)  
 🔹 Abra um **Pull Request** 🚀  
-
-
-
